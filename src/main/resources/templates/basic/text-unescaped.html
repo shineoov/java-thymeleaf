@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 unescaped</title>
+</head>
+<body>
+<ul>
+    <li>기본 (ESCAPED) : <span th:text="${data}"></span></li>
+    <li>그대로 출력 (UNESCAPED) : <span th:utext="${data}"></span></li>
+</ul>
+</body>
+<body>
