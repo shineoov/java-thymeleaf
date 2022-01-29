@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>변수</title>
+</head>
+<body>
+<ul><b>Object</b>
+    <li>${user.username} = <span th:text="${user.username}"></span></li>
+    <li>${user['username']} = <span th:text="${user['username']}"></span></li>
+    <li>${user.getUsername()} = <span th:text="${user.getUsername()}"></span></li>
+</ul>
+<ul><b>List</b>
+    <li>${userList[1].username} = <span th:text="${userList[1].username}"></span></li>
+    <li>${userList[1]['username']} = <span th:text="${userList[1]['username']}"></span></li>
+    <li>${userList[1].getUsername()} = <span th:text="${userList[1].getUsername()}"></span></li>
+</ul>
+<ul><b>Map</b>
+    <li>${userMap['userA'].username} = <span th:text="${userMap['userA'].username}"></span></li>
+    <li>${userMap['userA']['username']} = <span th:text="${userMap['userA']['username']}"></span></li>
+    <li>${userMap['userA'].getUsername()} = <span th:text="${userMap['userA'].getUsername()}"></span></li>
+</ul>
+<ul th:with="custom=${userList[0]}">
+    <b>Local Variable</b>
+    <li>
+        지역변수 사용 = <span th:text="${custom.username}"></span>
+    </li>
+</ul>
+</body>
+</html>
