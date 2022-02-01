@@ -1,11 +1,13 @@
 package shineoov.thymeleaf;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import shineoov.thymeleaf.domain.User;
 
+import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +30,7 @@ public class BasicController {
     }
 
     @GetMapping("/variable")
-    public String valiable(Model model) {
+    public String variable(Model model) {
 
         User userA = new User("Apple", 10);
         User userB = new User("Banana", 20);
@@ -44,5 +46,18 @@ public class BasicController {
         model.addAttribute("userMap", userMap);
 
         return "basic/variable";
+    }
+
+    @GetMapping("/basic-objects")
+    public String basicObjects(HttpSession session) {
+        session.setAttribute("sessionData", "Hello Session");
+        return "basic/basic-objects";
+    }
+
+    @Component("helloBean")
+    static class HelloBean {
+        public String hello(String data) {
+            return "Hello " + data;
+        }
     }
 }
