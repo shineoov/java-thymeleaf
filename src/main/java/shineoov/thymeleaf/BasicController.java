@@ -81,6 +81,11 @@ public class BasicController {
         return "basic/literal";
     }
 
-
+    @GetMapping("/operation")
+    public String calculate(Model model) {
+        model.addAttribute("nullData", null);
+        model.addAttribute("data", "data!!");
+        return "basic/operation";
+    }
 
 }

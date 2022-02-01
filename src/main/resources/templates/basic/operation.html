@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>연산</title>
+<style>
+    span { font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>산술 연산</h1>
+<ul>
+    <li>10 + 2 = <span th:text="10 + 2"></span></li>
+    <li>10 % 5 == 0 = <span th:text="10 % 5 == 0"></span></li>
+    <li>2 * 8 = <span th:text="2 * 8"></span></li>
+    <li>5 - 2 = <span th:text="5 - 2"></span></li>
+</ul>
+<h1>비교 연산</h1>
+<ul>
+    <li>1 > 10 = <span th:text="1 &gt; 10"></span></li>
+    <li>1 > 10 = <span th:text="1 gt 10"></span></li>
+    <li>10 >= 10 = <span th:text="10 ge 10"></span></li>
+    <li>1 == 2 = <span th:text="1 eq 2"></span></li>
+    <li>1 == 2 = <span th:text="1 == 2"></span></li>
+    <li>1 != 2 = <span th:text="1 ne 2"></span></li>
+    <li>1 != 2 = <span th:text="1 != 2"></span></li>
+    <li>1 < 2 = <span th:text="1 lt 2"></span></li>
+    <li>1 <= 2 = <span th:text="3 le 2"></span></li>
+</ul>
+<h1>삼항 연산</h1>
+<ul>
+    <li>(10 % 2 == 0) ? '짝수' : '홀수' = <span th:text="(10 % 2 == 0) ? '짝수' : '홀수'"></span></li>
+</ul>
+<h1>Elvis 연산</h1>
+<ul>
+    <li>${data}?: '데이터 X' = <span th:text="${data}?: '데이터 X'"></span></li>
+    <li>${nullData}?: '데이터 X' = <span th:text="${nullData}?: '데이터 X'"></span></li>
+</ul>
+<h1>No-Operation</h1>
+<ul>
+    <li>${data}?: _ = <span th:text="${data}?: _">데이터 X</span></li>
+    <li>${nullData}?: _ = <span th:text="${nullData}?: _">데이터 X</span></li>
+</ul>
+</body>
+</html>
