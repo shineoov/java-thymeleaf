@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 객체</title>
+    <style>
+        .text { font-weight: bold;}
+        .blue { color: #0000ff }
+        .red { color:#ff0000 }
+        .green { color: #008000 }
+    </style>
+</head>
+<body>
+<h1>Input 태그 속성</h1>
+<input type="text" name="email" th:name="id"><br>
+<div>type="text" name="email" th:name="id" ==>> <b>type="text" name="id"</b></div>
+
+<h1>속성 추가</h1>
+<ul>
+    <li>
+        th:attrappend="class=' blue' -> <span class="text" th:attrappend="class=' blue'">BLUE</span>
+    </li>
+    <li>
+        th:attrprepend="class='red ' -> <span class="text" th:attrprepend="class='red '">RED</span>
+    </li>
+    <li>
+        th:classappend="green" -> <span class="text" th:classappend="green">Green</span>
+    </li>
+</ul>
+<h1>체크박스, 라디오 처리</h1>
+<ul>
+    <li>
+        th:checked="true" -> <input type="checkbox" name="checkbox" th:checked="true"/>
+    </li>
+    <li>
+        th:checked="false" -> <input type="checkbox" name="checkbox" th:checked="false"/>
+    </li>
+    <li>
+        th:checked="true" -> <input type="radio" name="radio" th:checked="true">
+    </li>
+</ul>
+</body>
+</html>
