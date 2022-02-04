@@ -9,10 +9,7 @@ import shineoov.thymeleaf.domain.User;
 
 import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/basic")
@@ -90,7 +87,20 @@ public class BasicController {
 
     @GetMapping("/attribute")
     public String attribute(Model model) {
-
         return "basic/attribute";
+    }
+
+    @GetMapping("/iteration")
+    public String iteration(Model model) {
+        addUsers(model);
+        return "basic/iteration";
+    }
+
+    private void addUsers(Model model) {
+        List<User> users = new ArrayList<>();
+        users.add(new User("userA", 10));
+        users.add(new User("userB", 20));
+        users.add(new User("userC", 30));
+        model.addAttribute("users", users);
     }
 }
