@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주석</title>
+</head>
+<body>
+
+<h1>1. 일반 HTML 주석</h1>
+<!--
+<span th:text="${data}">html data</span>
+-->
+
+
+<!-- html 주석안에 /* */ 넣는식으로 -->
+<h1>2. 타임리프 파서 주석</h1>
+<!--/* [[${data}]] */-->
+<!--/*-->
+<span th:text="${data}">html data</span>
+<!--*/-->
+
+<h1>3. 타임리프 프로토타입 주속</h1>
+<p>웹 브라우저에서는 주석이고 타임리프 렌더링 될때만 출력</p>
+<!--/*/
+<span th:text="${data}">html data !!</span>
+/*/-->
+
+</body>
+
+
+</html>
