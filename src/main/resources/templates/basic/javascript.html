@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<!-- 적용X -->
+<script>
+const username = "[[${user.username}]]";
+const age = [[${user.age}]];
+const username2 = /*[[${user.username}]]*/ "test username";
+const user = [[${user}]];
+</script>
+
+<!-- 자바스크립트 inline 적용O -->
+<script th:inline="javascript">
+const username = [[${user.username}]];
+const age = [[${user.age}]];
+const username2 = /*[[${user.username}]]*/ "test username";
+const user = [[${user}]];
+</script>
+
+<!-- 자바스크립트 each -->
+<script th:inline="javascript">
+[# th:each="user, stat : ${users}"]
+var user[[${stat.count}]] = [[${user}]];
+[/]
+</script>
+
+
+</body>
+</html>
