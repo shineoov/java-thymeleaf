@@ -12,10 +12,19 @@
 <h2>부분 포함 replace</h2>
 <div th:replace="~{layout/fragment/footer::copy}"></div>
 
+<h2>부분 포함 include</h2>
+<div th:include="~{layout/fragment/footer :: copy }"></div>
+
 <h2>부분 포함 replace 단순 표현식</h2>
 <div th:replace="layout/fragment/footer::copy"></div>
 
 <h1>파라미터 사용</h1>
 <div th:replace="~{layout/fragment/footer :: copyParam('data1', 'data2')}"></div>
+
+
+<h1>th:fragments 없이 ID로</h1>
+<div th:replace="~{layout/fragment/footer :: #footer}">
+
+</div>
 </body>
 </html>
